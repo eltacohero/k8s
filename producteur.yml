@@ -14,4 +14,10 @@ spec:
       containers:
       - name: alpine
         image: alpine
-
+        volumeMounts:
+          - name: volume
+            mountpath: /web
+      volumes:
+      - name: data
+        hostPath:
+          path: /
