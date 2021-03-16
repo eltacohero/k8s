@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: producteur
@@ -13,11 +13,13 @@ spec:
     spec:
       containers:
       - name: alpine
-        image: alpine
+        image: alpine:3.12
+        command: ["/bin/sh", "-c"]
+        args: ["echo $HOSTNAME $(date) > /web/index.html; sleep 60"]  
         volumeMounts:
-          - name: volume
+          - name: web
             mountpath: /web
       volumes:
-      - name: data
+      - name: web
         hostPath:
           path: /
