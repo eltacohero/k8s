@@ -7,7 +7,7 @@ spec:
     app: web
   type: NodePort
   ports:
-    - ports: 80
+    - port: 80
       targetPort: 80
       nodePort: 30000  
 
