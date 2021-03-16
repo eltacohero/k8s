@@ -18,7 +18,7 @@ spec:
         args: ["while sleep 60; do echo $HOSTNAME $(date) > /web/index.html; done"]  
         volumeMounts:
           - name: web
-            mountpath: /web
+            mountPath: /web
       volumes:
       - name: web
         hostPath:

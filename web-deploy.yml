@@ -15,3 +15,10 @@ spec:
       containers:
       - name : httpd
         image: httpd
+        volumeMounts:
+          - name: web
+            mountPath: /web
+      volumes:
+      - name: web
+        hostPath:
+          path: /
