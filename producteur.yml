@@ -15,7 +15,7 @@ spec:
       - name: alpine
         image: alpine:3.12
         command: ["/bin/sh", "-c"]
-        args: ["echo $HOSTNAME $(date) > /web/index.html; sleep 60"]  
+        args: ["while sleep 60; do echo $HOSTNAME $(date) > /web/index.html; done"]  
         volumeMounts:
           - name: web
             mountpath: /web
