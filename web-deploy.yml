@@ -16,9 +16,9 @@ spec:
       - name : httpd
         image: httpd
         volumeMounts:
-          - name: web
+          - name: html
             mountPath: /htdocs
       volumes:
-      - name: web
+      - name: html
         hostPath:
-          path: /
+          path: /tmp

@@ -15,11 +15,11 @@ spec:
       - name: alpine
         image: alpine:3.12
         command: ["/bin/sh", "-c"]
-        args: ["while sleep 60; do echo $HOSTNAME $(date) > /web/index.html; done"]  
+        args: ["while sleep 60; do echo $HOSTNAME $(date) > /var/html/index.html; done"]  
         volumeMounts:
-          - name: web
-            mountPath: /web
+          - name: html
+            mountPath: /var/html/
       volumes:
-      - name: web
-        hostPath:
-          path: /
+      - name: html
+        hostPath: 
+          path: /tmp
